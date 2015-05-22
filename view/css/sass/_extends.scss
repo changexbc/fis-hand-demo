@@ -1,0 +1,79 @@
+@charset "utf-8";
+//
+// Extends
+// --------------------------------------------------
+
+
+// clearfix
+// --------------------------------------------------
+%clearfix{
+  &:before,
+  &:after {
+    display: table;
+    content: " ";
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+
+// center-block
+// --------------------------------------------------
+%center-block{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+// text-overflow
+// --------------------------------------------------
+%text-overflow{
+    word-break:keep-all;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+
+
+// ios-checkbox
+// --------------------------------------------------
+.ios-checkbox{
+    input{
+        display:none!important;
+    }
+    input:checked + label:before {
+        transform:translate3d(19px,0,0);
+    }
+    input:checked + label {
+        background: $pink;
+        border:1px solid $pink;
+    }
+    label{
+        background-color:rgba(234, 234, 234, 0.47);
+        border-radius: 40px;
+        display: inline-block;
+        position: relative;
+        transition: all 0.1s ease;
+        width: 40px;
+        height: 21px;
+        border:1px solid rgba(234, 234, 234, 0.06);
+        &:before{
+            content: '';
+            position: absolute;
+            background: #fff;
+            top: 0;
+            left: 0;
+            width: 21px;
+            transform:translate3d(0,0,0);
+            transition: all 0.1s ease;
+            height: 21px;
+            border-radius: 50%;
+        }
+    }
+
+}
+
+
+
